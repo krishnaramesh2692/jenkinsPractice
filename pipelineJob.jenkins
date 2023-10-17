@@ -1,0 +1,38 @@
+stage ("INPUT") {
+  steps {
+    script{
+        def answer = input message: 'message', parameters: [ booleanParam(defaultValue:true, description: 'pre-relea', name: 'prerelease')]
+        echo "${answer.prerelease}"
+        env.resp = input message: '<message>', parameters: [string(defaultValue: '', description: 'Enter response 1', name: 'RESPONSE1')
+    }
+    echo "${env.resp}"
+  }
+}
+
+
+
+
+
+def answer = input message: 'message', parameters: [ booleanParam(defaultValue:true, description: 'pre-relea', name: 'preelease')]
+def choice = input message: '<message>', parameters: [choice(choices: "choice1\nchoice2\nchoice3\nchoice4\n", description: 'Choose an option', name: 'Options')]
+def selectedFile = input message:"message" , parameters: [file(description: 'Choose file to upload', name: 'local')]
+def resp = input message: '<message>', parameters: [string(defaultValue: '', description: 'Enter response', name: 'Response')]
+def loginInfo = input message: 'Login',  parameters: [string(defaultValue: '', description:   'Enter Userid:', name: 'userid'),  password(defaultValue: '', description: 'Enter Password:', name: 'passwd')]
+// agent, environment, parameters , options,triggers ,libraries, tools 
+// stages, stage, steps , srcipt post
+// stage agent, environment, tools post 
+pipeline{
+  agent any 
+  parameters {
+    string(name: , description:, defautlValue: )
+  }
+  stages{
+      stage (''){
+          steps {
+              echo "Running first pipeline "
+          }
+      }
+    
+  }
+}
+
