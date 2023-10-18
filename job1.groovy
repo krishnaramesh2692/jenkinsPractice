@@ -8,6 +8,7 @@
         libraries{
             lib("mylib@masther")
             lib("alib")
+            library("GlobalLib").org.demo.Utilities.timedGradleBuild
         }
         
         stages{
